@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+.all{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center;
+  min-height: 100vh;
+  background: black;
 
-.App-link {
-  color: #61dafb;
 }
+.container_{
+  position: relative;
+  display: flex;
+}
+.container_ .box_{
+  position: relative;
+  width: 320px;
+  height: 400px;
+  margin: 0 20px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #2da2ff 25%,
+  #444 25%, #444 50%, #2da2ff 50%, #2da2ff 75%,
+  #444 75%, #444 100%);
+  background-size: 40px 40px;
+  filter: grayscale(1);
+  animation: animatedBg 0.5s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1.5s;
+  display: flex;
+  justify-content: center;
+}
+.container_ .box_:hover{
+animation-play-state: running;
+filter: grayscale(0);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.container_ .box_:nth-child(2){
+   background: linear-gradient(45deg, #df4d4d 25%,
+  #444 25%, #444 50%, #df4d4d 50%, #df4d4d 75%,
+  #444 75%, #444 100%);
+  background-size: 40px 40px;
+
+}
+@keyframes animatedBg{
+  0%
+  {
+    background-position: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+    background-position: 40px;
   }
+}
+.container_ .box_ img{
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  transition: height 0.5s;
+
+}
+.container_ .box_:hover img{
+  height: 480px;
+
 }
